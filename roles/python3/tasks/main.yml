@@ -1,0 +1,8 @@
+---
+- include: common.yml
+- include: percona.yml
+- include: python.yml
+#- include: zsh.yml
+- include: purge.yml
+
+#vagrant package --output dsdev.box

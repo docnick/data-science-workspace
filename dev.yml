@@ -1,0 +1,7 @@
+---
+- name: Install data science dev machine
+  hosts:
+  - dev
+  become: True
+  roles:
+  - python3

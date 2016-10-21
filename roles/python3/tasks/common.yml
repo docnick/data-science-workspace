@@ -1,0 +1,25 @@
+---
+
+- name: update apt cache
+  apt: update_cache=yes
+
+
+- name: install common packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - tmux
+  - g++
+  # required for matlibplot
+  - libfreetype6-dev
+  - libxft-dev
+  # working with images
+  - libtiff4-dev
+  - libjpeg8-dev
+  - zlib1g-dev
+  - liblcms2-dev
+  - libwebp-dev
+  - tcl8.5-dev
+  - tk8.5-dev
+  - tesseract-ocr

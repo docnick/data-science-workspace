@@ -1,0 +1,17 @@
+---
+
+- name: Install zsh
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - zsh
+  - git-core
+
+
+- name: Install ohmyzsh
+  shell: "wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh"
+
+
+- name: Change default shell
+  shell: "chsh -s `which zsh`"

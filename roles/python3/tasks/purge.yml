@@ -1,0 +1,12 @@
+---
+
+- name: move purge script
+  template:
+    src: purge.sh
+    dest: /usr/bin/purge
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Execute purge
+  shell: "/usr/bin/purge"
